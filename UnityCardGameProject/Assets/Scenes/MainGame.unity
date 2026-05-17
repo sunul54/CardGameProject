@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardSlot
   cardSlotNum: 0
+  currentCard: {fileID: 0}
 --- !u!61 &301681841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -838,6 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardSlot
   cardSlotNum: 4
+  currentCard: {fileID: 0}
 --- !u!61 &1271333873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1019,6 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardSlot
   cardSlotNum: 2
+  currentCard: {fileID: 0}
 --- !u!61 &1306286843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1463,6 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardSlot
   cardSlotNum: 1
+  currentCard: {fileID: 0}
 --- !u!61 &1657863038
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1644,6 +1648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardSlot
   cardSlotNum: 3
+  currentCard: {fileID: 0}
 --- !u!61 &1753056569
 BoxCollider2D:
   m_ObjectHideFlags: 0
