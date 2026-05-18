@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10bcc25127248b6498296fa79834cfa3, type: 3}
+  m_Name: "\uBC29\uC5B4"
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  CardName: "\uBC29\uC5B4"
+  CardID: 2
+  CardType: Utility
+  damage: 0
+  cardImage: {fileID: -9030766854675659155, guid: 68ada64815bf557439f3d7c8d93dd8e7, type: 3}
+  CardDesc: "\uBC29\uC5B4\uD55C\uB2E4"

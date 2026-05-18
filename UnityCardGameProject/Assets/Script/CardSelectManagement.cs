@@ -1,12 +1,16 @@
 using UnityEngine;
+using TMPro;
 
 public class CardSelectManagement : MonoBehaviour
 {
+    public TextMeshProUGUI infoText;
+
     public bool CardSelectPanelActive = true;
     public bool isCardSelected = false;
 
     public GameObject cardSelectPanel;
     public GameObject CardSelectButton;
+    public GameObject nextbutton;
 
     public int SelectedCardNum;
 
@@ -22,6 +26,8 @@ public class CardSelectManagement : MonoBehaviour
         if (CardSelectPanelActive == true)
         {
             cardSelectPanel.SetActive(false);
+            infoText.text = "준비 단계";
+            nextbutton.SetActive(true);
         }
 
         // 버튼 투명도 조절
@@ -43,7 +49,7 @@ public class CardSelectManagement : MonoBehaviour
         // 카드 선택 상태
         if (isCardSelected == true)
         {
-            Debug.Log("선택된 카드 : " + SelectedCardNum);
+            
 
             for (int i = 0; i < 5; i++)
             {
@@ -65,7 +71,7 @@ public class CardSelectManagement : MonoBehaviour
         }
         else
         {
-            Debug.Log("카드 선택 해제");
+            
 
             for (int i = 0; i < 5; i++)
             {

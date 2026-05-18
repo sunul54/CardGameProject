@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class ObjectClickDetector2D : MonoBehaviour
 {
+    public GameManager gameManager;
     public CardSelectManagement cardSelectManagement;
     CardSlot cardSlot;
     public SceneAsset MainGame;
+    public SceneAsset loadScene;
 
     void Update()
     {
@@ -22,7 +24,7 @@ public class ObjectClickDetector2D : MonoBehaviour
             // 오브젝트 감지
             if (hit.collider != null)
             {
-                Debug.Log("클릭한 오브젝트 : " + hit.collider.gameObject.name);
+                
 
                 // 태그 확인
                 //시작 버튼
@@ -39,7 +41,7 @@ public class ObjectClickDetector2D : MonoBehaviour
                         int temp = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //선택된 카드 번호 임시 저장
                         if(temp == cardSelectManagement.SelectedCardNum) //선택된 카드 번호와 클릭한 카드 번호가 같다면
                         {
-                            Debug.Log("같은 카드 선택");
+                            
                             cardSelectManagement.isCardSelected = false;
                             cardSelectManagement.SelectedCardNum = 6;
                         }
@@ -60,12 +62,29 @@ public class ObjectClickDetector2D : MonoBehaviour
                    
 
 
-                }else if(hit.collider.CompareTag("CardSelectButton"))//카드 최종 선택 버튼
+                }
+                else if (hit.collider.CompareTag("CardSelectButton")) //카드 선택 버튼
                 {
-                    if(cardSelectManagement.isCardSelected == true) //카드가 선택되어 있다면
+                    if (cardSelectManagement.isCardSelected == true)
                     {
-                        cardSelectManagement.CardSelectPanelActive = true; //카드 선택 패널 비활성화
+                        int selectedIndex =
+                            cardSelectManagement.SelectedCardNum;
+
+                        CardData selectedCard =
+                            cardSelectManagement.CardSlot[selectedIndex]
+                            .GetComponent<CardSlot>()
+                            .currentCard;
+
+                        gameManager.selectedCard = selectedCard;
+
+                        Debug.Log("최종 선택 카드 : "
+                            + gameManager.selectedCard.CardName);
+
+                        cardSelectManagement.CardSelectPanelActive = true;
                     }
+                }else if(hit.collider.CompareTag("SceneChange"))
+                {
+                    SceneManager.LoadScene(loadScene.name);
                 }
             }
         }

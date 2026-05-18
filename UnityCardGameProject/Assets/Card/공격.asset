@@ -16,5 +16,5 @@ MonoBehaviour:
   CardID: 1
   CardType: Attack
   damage: 5
-  cardImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  cardImage: {fileID: -66962874499676635, guid: caa914df31a8df94fa9e8dbfea01077c, type: 3}
   CardDesc: "5\uC758 \uD53C\uD574\uB97C \uC785\uD78C\uB2E4"

@@ -2,18 +2,33 @@ using UnityEngine;
 
 public class CardSlot : MonoBehaviour
 {
-    // 카드 슬롯 번호
     public int cardSlotNum;
 
     public CardData currentCard;
 
-    void Start()
-    {
+    public CardTooltipUI tooltipUI;
 
+    private SpriteRenderer sr;
+
+    void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    public void SetCard(CardData cardData)
     {
+        currentCard = cardData;
 
+        sr.sprite = cardData.cardImage;
+    }
+
+    void OnMouseEnter()
+    {
+        tooltipUI.Show(currentCard);
+    }
+
+    void OnMouseExit()
+    {
+        tooltipUI.Hide();
     }
 }
