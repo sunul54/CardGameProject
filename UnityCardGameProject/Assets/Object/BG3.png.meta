@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 4ebac14bc970e6740baf9dc6fedb88bc
+guid: 0b47c25b2ec4cc747bff70d5c6ce6400
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5622922307416509975
-    second: b49627e4816166f4_0
-  - first:
-      213: -6202006427898792888
-    second: b49627e4816166f4_1
-  - first:
-      213: 6857198738818305716
-    second: b49627e4816166f4_2
+      213: -8251505574100086631
+    second: BG3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,67 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HpSpUi_0
+      name: BG3_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 28
-        width: 62
-        height: 19
+        x: 0
+        y: 0
+        width: 1672
+        height: 941
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: eac6f9e19d93693458b7203edffa2628
-      internalID: -1688481549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HpSpUi_1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 19
-        width: 41
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a48d7472f442b00498f0f1dceb890244
-      internalID: 811572254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HpSpUi_2
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 10
-        width: 41
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b05c619ae474eec439bf623a2668c94d
-      internalID: -922091100
+      spriteID: 990db911663cc7d80800000000000000
+      internalID: -8251505574100086631
       vertices: []
       indices: 
       edges: []
@@ -188,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4fbc046d849c36d4ab6689001ab46317
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -196,13 +146,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":3.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      HpSpUi_0: -1688481549
-      HpSpUi_1: 811572254
-      HpSpUi_2: -922091100
+      BG3_0: -8251505574100086631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
