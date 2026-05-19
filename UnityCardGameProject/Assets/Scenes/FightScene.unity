@@ -1123,9 +1123,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHpBar
   EnemyHpBarImage: {fileID: 226037987}
+  baseMaxEnemyHp: 50
+  baseEnemyMinDamage: 5
+  baseEnemyMaxDamage: 20
   CurrantEnemyHp: 50
   MaxEnemyHp: 50
   decreaseSpeed: 20
+  currentMinDamage: 0
+  currentMaxDamage: 0
 --- !u!114 &1303961952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,7 +1149,7 @@ MonoBehaviour:
   buttonUI: {fileID: 1687885277}
   InfoTextUI: {fileID: 1243204108}
   infoText: {fileID: 1414185444}
-  typingSpeed: 0.05
+  typingSpeed: 0.02
   nextSceneName: MainGame
   gameOverSceneName: GameOver
 --- !u!1 &1414185442

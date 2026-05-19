@@ -1,4 +1,4 @@
-using UnityEditor;
+ï»¿using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,50 +12,50 @@ public class ObjectClickDetector2D : MonoBehaviour
 
     void Update()
     {
-        // ¸¶¿ì½º ¿ŞÂÊ Å¬¸¯
+        // ë§ˆìš°ìŠ¤ ì™¼ìª½ í´ë¦­
         if (Input.GetMouseButtonDown(0))
         {
-            // ¸¶¿ì½º À§Ä¡¸¦ ¿ùµå ÁÂÇ¥·Î º¯È¯
+            // ë§ˆìš°ìŠ¤ ìœ„ì¹˜ë¥¼ ì›”ë“œ ì¢Œí‘œë¡œ ë³€í™˜
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Raycast ½ÇÇà
+            // Raycast ì‹¤í–‰
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-            // ¿ÀºêÁ§Æ® °¨Áö
+            // ì˜¤ë¸Œì íŠ¸ ê°ì§€
             if (hit.collider != null)
             {
                 
 
-                // ÅÂ±× È®ÀÎ
-                //½ÃÀÛ ¹öÆ°
+                // íƒœê·¸ í™•ì¸
+                //ì‹œì‘ ë²„íŠ¼
                 if (hit.collider.CompareTag("Start"))
                 {
                     SceneManager.LoadScene(MainGame.name);
-                }else if (hit.collider.CompareTag("GameStop")) // Á¤Áö ¹öÆ°
+                }else if (hit.collider.CompareTag("GameStop")) // ì •ì§€ ë²„íŠ¼
                 {
                     Application.Quit();
-                }else if(hit.collider.CompareTag("CardSlot")) //Ä«µå ½½·Ô
+                }else if(hit.collider.CompareTag("CardSlot")) //ì¹´ë“œ ìŠ¬ë¡¯
                 {
-                    if(cardSelectManagement.isCardSelected == true) //ÀÌ¹Ì Ä«µå°¡ ¼±ÅÃµÇ¾î ÀÖ´Ù¸é
+                    if(cardSelectManagement.isCardSelected == true) //ì´ë¯¸ ì¹´ë“œê°€ ì„ íƒë˜ì–´ ìˆë‹¤ë©´
                     {
-                        int temp = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //¼±ÅÃµÈ Ä«µå ¹øÈ£ ÀÓ½Ã ÀúÀå
-                        if(temp == cardSelectManagement.SelectedCardNum) //¼±ÅÃµÈ Ä«µå ¹øÈ£¿Í Å¬¸¯ÇÑ Ä«µå ¹øÈ£°¡ °°´Ù¸é
+                        int temp = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //ì„ íƒëœ ì¹´ë“œ ë²ˆí˜¸ ì„ì‹œ ì €ì¥
+                        if(temp == cardSelectManagement.SelectedCardNum) //ì„ íƒëœ ì¹´ë“œ ë²ˆí˜¸ì™€ í´ë¦­í•œ ì¹´ë“œ ë²ˆí˜¸ê°€ ê°™ë‹¤ë©´
                         {
                             
                             cardSelectManagement.isCardSelected = false;
                             cardSelectManagement.SelectedCardNum = 6;
                         }
-                        else //¼±ÅÃµÈ Ä«µå ¹øÈ£¿Í Å¬¸¯ÇÑ Ä«µå ¹øÈ£°¡ ´Ù¸£´Ù¸é
+                        else //ì„ íƒëœ ì¹´ë“œ ë²ˆí˜¸ì™€ í´ë¦­í•œ ì¹´ë“œ ë²ˆí˜¸ê°€ ë‹¤ë¥´ë‹¤ë©´
                         {
-                            cardSelectManagement.SelectedCardNum = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //Ä«µå ¼±ÅÃ
+                            cardSelectManagement.SelectedCardNum = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //ì¹´ë“œ ì„ íƒ
                             cardSelectManagement.isCardSelected = true;
                         }
                             
 
                     }
-                    else //Ä«µå°¡ ¼±ÅÃµÇ¾î ÀÖÁö ¾Ê´Ù¸é
+                    else //ì¹´ë“œê°€ ì„ íƒë˜ì–´ ìˆì§€ ì•Šë‹¤ë©´
                     {
-                        cardSelectManagement.SelectedCardNum = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //Ä«µå ¼±ÅÃ
+                        cardSelectManagement.SelectedCardNum = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //ì¹´ë“œ ì„ íƒ
                         cardSelectManagement.isCardSelected = true;
                     }
 
@@ -63,7 +63,7 @@ public class ObjectClickDetector2D : MonoBehaviour
 
 
                 }
-                else if (hit.collider.CompareTag("CardSelectButton")) //Ä«µå ¼±ÅÃ ¹öÆ°
+                else if (hit.collider.CompareTag("CardSelectButton")) //ì¹´ë“œ ì„ íƒ ë²„íŠ¼
                 {
                     if (cardSelectManagement.isCardSelected == true)
                     {
@@ -77,7 +77,7 @@ public class ObjectClickDetector2D : MonoBehaviour
 
                         gameManager.selectedCard = selectedCard;
 
-                        Debug.Log("ÃÖÁ¾ ¼±ÅÃ Ä«µå : "
+                        Debug.Log("ìµœì¢… ì„ íƒ ì¹´ë“œ : "
                             + gameManager.selectedCard.CardName);
 
                         cardSelectManagement.CardSelectPanelActive = true;
