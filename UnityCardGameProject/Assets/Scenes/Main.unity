@@ -540,7 +540,6 @@ GameObject:
   m_Component:
   - component: {fileID: 632865054}
   - component: {fileID: 632865053}
-  - component: {fileID: 632865052}
   - component: {fileID: 632865051}
   m_Layer: 0
   m_Name: Setting
@@ -595,22 +594,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &632865052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632865050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4a0b776ad297a4aa88de213014b455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectClickDetector2D
-  gameManager: {fileID: 0}
-  cardSelectManagement: {fileID: 0}
-  MainGame: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
-  loadScene: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
 --- !u!212 &632865053
 SpriteRenderer:
   serializedVersion: 2
@@ -992,8 +975,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectClickDetector2D
   gameManager: {fileID: 0}
   cardSelectManagement: {fileID: 0}
-  MainGame: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
-  loadScene: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+  mainGameSceneName: MainGame
+  loadSceneName: MainGame
 --- !u!212 &1273986099
 SpriteRenderer:
   serializedVersion: 2

@@ -1,14 +1,18 @@
-﻿using UnityEditor;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement; // 씬 전환을 위해 필수
 
 public class ObjectClickDetector2D : MonoBehaviour
 {
     public GameManager gameManager;
     public CardSelectManagement cardSelectManagement;
-    CardSlot cardSlot;
-    public SceneAsset MainGame;
-    public SceneAsset loadScene;
+    // CardSlot cardSlot; // 사용하지 않는 변수라면 주석 처리하거나 삭제 가능합니다.
+
+    [Header("Scene Settings")]
+    [Tooltip("이동할 메인 게임 씬의 정확한 이름을 입력하세요.")]
+    public string mainGameSceneName;
+
+    [Tooltip("SceneChange 태그 클릭 시 이동할 씬 이름을 입력하세요.")]
+    public string loadSceneName;
 
     void Update()
     {
@@ -24,67 +28,76 @@ public class ObjectClickDetector2D : MonoBehaviour
             // 오브젝트 감지
             if (hit.collider != null)
             {
-                
-
-                // 태그 확인
-                //시작 버튼
+                // 1. 시작 버튼
                 if (hit.collider.CompareTag("Start"))
                 {
-                    SceneManager.LoadScene(MainGame.name);
-                }else if (hit.collider.CompareTag("GameStop")) // 정지 버튼
+                    if (!string.IsNullOrEmpty(mainGameSceneName))
+                    {
+                        SceneManager.LoadScene(mainGameSceneName);
+                    }
+                    else
+                    {
+                        Debug.LogError("Main Game Scene Name이 설정되지 않았습니다!");
+                    }
+                }
+                // 2. 정지 버튼
+                else if (hit.collider.CompareTag("GameStop"))
                 {
                     Application.Quit();
-                }else if(hit.collider.CompareTag("CardSlot")) //카드 슬롯
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false; // 에디터에서도 멈추게 설정
+#endif
+                }
+                // 3. 카드 슬롯
+                else if (hit.collider.CompareTag("CardSlot"))
                 {
-                    if(cardSelectManagement.isCardSelected == true) //이미 카드가 선택되어 있다면
+                    CardSlot hitCardSlot = hit.collider.gameObject.GetComponent<CardSlot>();
+
+                    if (cardSelectManagement.isCardSelected) // 이미 카드가 선택되어 있다면
                     {
-                        int temp = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //선택된 카드 번호 임시 저장
-                        if(temp == cardSelectManagement.SelectedCardNum) //선택된 카드 번호와 클릭한 카드 번호가 같다면
+                        int temp = hitCardSlot.cardSlotNum;
+                        if (temp == cardSelectManagement.SelectedCardNum) // 같은 카드 클릭 시 선택 해제
                         {
-                            
                             cardSelectManagement.isCardSelected = false;
-                            cardSelectManagement.SelectedCardNum = 6;
+                            cardSelectManagement.SelectedCardNum = 6; // 기본값으로 초기화
                         }
-                        else //선택된 카드 번호와 클릭한 카드 번호가 다르다면
+                        else // 다른 카드 클릭 시 선택 변경
                         {
-                            cardSelectManagement.SelectedCardNum = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //카드 선택
+                            cardSelectManagement.SelectedCardNum = temp;
                             cardSelectManagement.isCardSelected = true;
                         }
-                            
-
                     }
-                    else //카드가 선택되어 있지 않다면
+                    else // 카드가 선택되어 있지 않다면 새로 선택
                     {
-                        cardSelectManagement.SelectedCardNum = hit.collider.gameObject.GetComponent<CardSlot>().cardSlotNum; //카드 선택
+                        cardSelectManagement.SelectedCardNum = hitCardSlot.cardSlotNum;
                         cardSelectManagement.isCardSelected = true;
                     }
-
-                   
-
-
                 }
-                else if (hit.collider.CompareTag("CardSelectButton")) //카드 선택 버튼
+                // 4. 카드 선택 확정 버튼
+                else if (hit.collider.CompareTag("CardSelectButton"))
                 {
-                    if (cardSelectManagement.isCardSelected == true)
+                    if (cardSelectManagement.isCardSelected)
                     {
-                        int selectedIndex =
-                            cardSelectManagement.SelectedCardNum;
+                        int selectedIndex = cardSelectManagement.SelectedCardNum;
 
-                        CardData selectedCard =
-                            cardSelectManagement.CardSlot[selectedIndex]
+                        CardData selectedCard = cardSelectManagement.CardSlot[selectedIndex]
                             .GetComponent<CardSlot>()
                             .currentCard;
 
                         gameManager.selectedCard = selectedCard;
 
-                        Debug.Log("최종 선택 카드 : "
-                            + gameManager.selectedCard.CardName);
+                        Debug.Log("최종 선택 카드 : " + gameManager.selectedCard.CardName);
 
                         cardSelectManagement.CardSelectPanelActive = true;
                     }
-                }else if(hit.collider.CompareTag("SceneChange"))
+                }
+                // 5. 일반 씬 전환 버튼
+                else if (hit.collider.CompareTag("SceneChange"))
                 {
-                    SceneManager.LoadScene(loadScene.name);
+                    if (!string.IsNullOrEmpty(loadSceneName))
+                    {
+                        SceneManager.LoadScene(loadSceneName);
+                    }
                 }
             }
         }

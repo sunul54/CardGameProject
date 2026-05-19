@@ -289,6 +289,7 @@ MonoBehaviour:
   GameTurnCount: 1
   MaxPlayerHp: 50
   MaxPlayerSp: 50
+  PlayerStr: 10
   selectedCard: {fileID: 0}
 --- !u!4 &350244561
 Transform:
@@ -319,8 +320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectClickDetector2D
   gameManager: {fileID: 350244560}
   cardSelectManagement: {fileID: 569413277}
-  MainGame: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
-  loadScene: {fileID: 102900000, guid: f0295d64a5b18f44c9512bf48607de86, type: 3}
+  mainGameSceneName: FightScene
+  loadSceneName: FightScene
 --- !u!1 &355151746
 GameObject:
   m_ObjectHideFlags: 0
