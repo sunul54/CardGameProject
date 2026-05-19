@@ -1146,7 +1146,7 @@ MonoBehaviour:
   infoText: {fileID: 1414185444}
   typingSpeed: 0.05
   nextSceneName: MainGame
-  gameOverSceneName: Main
+  gameOverSceneName: GameOver
 --- !u!1 &1414185442
 GameObject:
   m_ObjectHideFlags: 0
