@@ -18,14 +18,18 @@ Unity 6 기반으로 제작 중이며,
 
 ---
 
+# 게임 기획 및 설정
+
+1. 카드 및 능력 설정
+  - https://1drv.ms/x/c/1b14b86f173d4dff/IQCKTY7hElBvQ6QjRgCkQFkYATsqaJ9MXFqy6BmB1yeXHNc?e=QBmAV8
+---
+
 # 핵심 시스템
 
 - 턴제 전투 시스템
 - 카드 기반 전투
-- ScriptableObject 기반 데이터 관리
-- 상태 기반 전투 흐름
-- 이벤트 기반 구조
-- 확장 가능한 AI 구조
+- 카드 선택 구조
+
 
 ---
 
