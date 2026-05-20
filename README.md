@@ -20,7 +20,7 @@ Unity 6 기반으로 제작 중이며,
 
 # 게임 기획 및 설정
 
-1. 카드 및 능력 설정
+1. 핵심 카드 및 능력 설정
   - https://1drv.ms/x/c/1b14b86f173d4dff/IQCKTY7hElBvQ6QjRgCkQFkYATsqaJ9MXFqy6BmB1yeXHNc?e=QBmAV8
 ---
 
