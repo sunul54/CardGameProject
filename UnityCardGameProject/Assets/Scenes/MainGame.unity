@@ -789,6 +789,7 @@ MonoBehaviour:
   allCards:
   - {fileID: 11400000, guid: e24365ec74275f34b80c8e08689f1b05, type: 2}
   - {fileID: 11400000, guid: 222636a9b700e6243ba2741bfb30cbe3, type: 2}
+  - {fileID: 11400000, guid: 6bd881601afdd444eb6189abc2f5e8f1, type: 2}
   cardSlots:
   - {fileID: 1976620098}
   - {fileID: 1215194151}
