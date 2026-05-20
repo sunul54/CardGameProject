@@ -1123,14 +1123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHpBar
   EnemyHpBarImage: {fileID: 226037987}
-  baseMaxEnemyHp: 50
-  baseEnemyMinDamage: 5
-  baseEnemyMaxDamage: 20
   CurrantEnemyHp: 50
   MaxEnemyHp: 50
   decreaseSpeed: 20
-  currentMinDamage: 0
-  currentMaxDamage: 0
 --- !u!114 &1303961952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,8 +1878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectClickDetector2D
   gameManager: {fileID: 1658945891}
   cardSelectManagement: {fileID: 0}
-  MainGame: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
-  loadScene: {fileID: 102900000, guid: f0295d64a5b18f44c9512bf48607de86, type: 3}
+  mainGameSceneName: 
+  loadSceneName: 
 --- !u!114 &1658945891
 MonoBehaviour:
   m_ObjectHideFlags: 0
